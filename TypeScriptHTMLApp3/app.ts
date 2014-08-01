@@ -3,10 +3,10 @@ var MyApp = angular.module("MyApp", []);
 
 class MyController {
     constructor($scope) {
-        $scope.clock = new Date();
+        $scope.clock = {now : new Date()};
 
         var updateClock = function () {
-            $scope.clock = new Date();
+            $scope.clock.now = new Date();
         };
 
         setInterval(function () {
@@ -16,6 +16,8 @@ class MyController {
         updateClock();
     }
 }
+
+MyApp.controller("MyController", MyController);
 /*
 function MyController($scope) {
 

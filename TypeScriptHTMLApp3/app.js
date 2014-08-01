@@ -2,10 +2,10 @@
 
 var MyController = (function () {
     function MyController($scope) {
-        $scope.clock = new Date();
+        $scope.clock = { now: new Date() };
 
         var updateClock = function () {
-            $scope.clock = new Date();
+            $scope.clock.now = new Date();
         };
 
         setInterval(function () {
@@ -16,6 +16,8 @@ var MyController = (function () {
     }
     return MyController;
 })();
+
+MyApp.controller("MyController", MyController);
 /*
 function MyController($scope) {
 $scope.clock = new Date();
